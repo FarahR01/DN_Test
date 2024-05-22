@@ -1,0 +1,13 @@
+2024-05-22T07:01:52.239Z info: New user created with ID: 1
+2024-05-22T07:03:18.442Z info: New user created with ID: 1
+2024-05-22T07:06:07.401Z info: Email updated for user ID: 1
+2024-05-22T07:08:15.520Z info: Phone number updated for user ID: 1
+2024-05-22T07:10:15.023Z info: Password updated and token created for user ID: 1
+2024-05-22T07:12:47.497Z info: New user created with ID: 2
+2024-05-22T07:13:20.172Z warn: Email already exists: test@gmail.com
+2024-05-22T07:16:45.009Z info: New user created with ID: 3
+2024-05-22T07:16:59.113Z info: Email updated for user ID: 3
+2024-05-22T07:17:09.694Z info: Phone number updated for user ID: 3
+2024-05-22T07:17:21.565Z info: Password updated and token created for user ID: 3
+2024-05-22T07:18:20.466Z info: New user created with ID: 4
+2024-05-22T07:21:58.631Z warn: Full name already exists: Farah Rihane
