@@ -1,79 +1,81 @@
-Project Description
-Project Title: Multi-Step User Registration API
+# Project Description
 
-Objective:
+## Project Title: Multi-Step User Registration API
+
+### Objective:
 This project, developed as part of a summer internship application for a backend developer role, focuses on creating a multi-step user registration process using Node.js and Express.js. The application guides users through entering their data in four distinct steps, ultimately saving the information in a MySQL database.
 
-Registration Steps:
+### Registration Steps:
 
-Enter Full Name: Users input their full name, which is then checked for existence in the database before saving.
-Enter Email: Users provide their email, which is validated and checked against existing records in the database.
-Enter Phone Number: Users input their phone number, which undergoes a similar validation and existence check.
-Enter Password: Users set a password, which is securely hashed before being saved. After successful registration, an authentication token (JWT) is generated, and the user session is terminated.
-Technologies Used:
+1. **Enter Full Name:** Users input their full name, which is then checked for existence in the database before saving.
+2. **Enter Email:** Users provide their email, which is validated and checked against existing records in the database.
+3. **Enter Phone Number:** Users input their phone number, which undergoes a similar validation and existence check.
+4. **Enter Password:** Users set a password, which is securely hashed before being saved. After successful registration, an authentication token (JWT) is generated, and the user session is terminated.
 
-Node.js: JavaScript runtime environment for server-side execution.
-Express.js: Web application framework for building API endpoints.
-Sequelize: ORM tool for database operations with MySQL.
-bcryptjs: Library for securely hashing passwords.
-jsonwebtoken: Library for creating and verifying JWT tokens for user authentication.
-Swagger: Tool for documenting API endpoints.
+### Technologies Used:
 
-API Endpoints:
+- **Node.js:** JavaScript runtime environment for server-side execution.
+- **Express.js:** Web application framework for building API endpoints.
+- **Sequelize:** ORM tool for database operations with MySQL.
+- **bcryptjs:** Library for securely hashing passwords.
+- **jsonwebtoken:** Library for creating and verifying JWT tokens for user authentication.
+- **Swagger:** Tool for documenting API endpoints.
 
-Save Full Name: /api/saveFullName
+### API Endpoints:
 
-Method: POST
-Description: Saves the user's full name (first name and last name).
-Responses:
-200: Full name saved.
-400: Full name already exists.
-500: Internal server error.
-Save Email: /api/saveEmail
+1. **Save Full Name:** `/api/saveFullName`
+   - **Method:** POST
+   - **Description:** Saves the user's full name (first name and last name).
+   - **Responses:**
+     - `200`: Full name saved.
+     - `400`: Full name already exists.
+     - `500`: Internal server error.
 
-Method: POST
-Description: Saves the user's email.
-Responses:
-200: Email saved.
-400: Email already exists or user ID not found in session.
-500: Internal server error.
-Save Phone Number: /api/savePhone
+2. **Save Email:** `/api/saveEmail`
+   - **Method:** POST
+   - **Description:** Saves the user's email.
+   - **Responses:**
+     - `200`: Email saved.
+     - `400`: Email already exists or user ID not found in session.
+     - `500`: Internal server error.
 
-Method: POST
-Description: Saves the user's phone number.
-Responses:
-200: Phone number saved.
-400: Phone number already exists or user ID not found in session.
-500: Internal server error.
-Save Password: /api/savePassword
+3. **Save Phone Number:** `/api/savePhone`
+   - **Method:** POST
+   - **Description:** Saves the user's phone number.
+   - **Responses:**
+     - `200`: Phone number saved.
+     - `400`: Phone number already exists or user ID not found in session.
+     - `500`: Internal server error.
 
-Method: POST
-Description: Saves the user's password and creates a JWT token.
-Responses:
-200: Password saved and token created.
-400: User ID not found in session.
-500: Internal server error.
-How the Code Works:
+4. **Save Password:** `/api/savePassword`
+   - **Method:** POST
+   - **Description:** Saves the user's password and creates a JWT token.
+   - **Responses:**
+     - `200`: Password saved and token created.
+     - `400`: User ID not found in session.
+     - `500`: Internal server error.
 
-saveFullName:
+### How the Code Works:
 
-Checks if the provided first and last name already exist in the database.
-If not, it creates a new user with the provided names and stores the user data in the session.
-saveEmail:
+1. **saveFullName:**
+   - Checks if the provided first and last name already exist in the database.
+   - If not, it creates a new user with the provided names and stores the user data in the session.
 
-Checks if the provided email already exists in the database.
-If not, it updates the current user's email in the session and the database.
-savePhone:
+2. **saveEmail:**
+   - Checks if the provided email already exists in the database.
+   - If not, it updates the current user's email in the session and the database.
 
-Checks if the provided phone number already exists in the database.
-If not, it updates the current user's phone number in the session and the database.
-savePassword:
+3. **savePhone:**
+   - Checks if the provided phone number already exists in the database.
+   - If not, it updates the current user's phone number in the session and the database.
 
-Hashes the provided password using bcrypt.
-Updates the current user's password in the database.
-Generates a JWT token for the user and destroys the session, clearing the session cookie.
-Summary:
+4. **savePassword:**
+   - Hashes the provided password using bcrypt.
+   - Updates the current user's password in the database.
+   - Generates a JWT token for the user and destroys the session, clearing the session cookie.
 
-Technologies: Node.js, Express.js, Sequelize, bcryptjs, jsonwebtoken, Swagger.
-Endpoints: Four (saveFullName, saveEmail, savePhone, savePassword).
-Functionality: This application handles the saving and updating of user information, including full name, email, phone number, and password. It uses sessions to track user data during the update process, ensuring data integrity and security throughout the multi-step registration process.
+### Summary:
+
+- **Technologies:** Node.js, Express.js, Sequelize, bcryptjs, jsonwebtoken, Swagger.
+- **Endpoints:** Four (saveFullName, saveEmail, savePhone, savePassword).
+- **Functionality:** This application handles the saving and updating of user information, including full name, email, phone number, and password. It uses sessions to track user data during the update process, ensuring data integrity and security throughout the multi-step registration process.
